@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>JspNServletProj</display-name>
+
+  <context-param>
+    <param-name>ORACLE-DRIVER</param-name>
+    <param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>ORACLE-URL</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521/XEPDB1</param-value>
+  </context-param>
+  <context-param>
+    <param-name>JNDI-ROOT</param-name>
+    <param-value>java:comp/env</param-value>
+  </context-param>
+
+
+  <servlet>
+    <servlet-name>PAGING-PARAMTER</servlet-name>
+    <jsp-file>/bbspage/BbsList.jsp</jsp-file>
+    <init-param>
+      <param-name>PAGE-SIZE</param-name>
+      <param-value>10</param-value>
+    </init-param>
+    <init-param>
+      <param-name>BLOCK-PAGE</param-name>
+      <param-value>3</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PAGING-PARAMTER</servlet-name>
+    <url-pattern>/bbspage/BbsList.jsp</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
+ 
+ 
+ 
+ 
+ 
+  <welcome-file-list>
+    <welcome-file>/page/Home.jsp</welcome-file> <!-- 프로젝트를 처음 실행할 때 보여줄 페이지 -->
+</welcome-file-list>
+  
+</web-app>
